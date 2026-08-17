@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#3e493b;--olive:#8f9b7d;--sage:#b8c0a6;--cream:#f5f3e6;--paper:#fbfaf4;--gold:#cfc78e;--brown:#7d6b43;--line:#dfe2d0;--shadow:0 18px 50px rgba(62,73,59,.10)}
+    :root{--ink:#8a794a;--olive:#909d7d;--sage:#b7c0a5;--cream:#f2f0d5;--paper:#fbfaf1;--gold:#d7cf98;--brown:#877548;--line:#dfe2cd;--shadow:0 18px 50px rgba(135,117,72,.12)}
     *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
     html{scroll-behavior:smooth;scroll-padding-top:112px}
     body{font-family:Cairo, sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;padding-bottom:110px}
     button{font:inherit}
-    .hero{background:linear-gradient(145deg,#eef0df 0%,#f8f7ed 62%,#e6ead8 100%);padding:28px 18px 42px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-    .hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(125,107,67,.15);border-radius:50%;left:-100px;top:-120px;box-shadow:0 0 0 28px rgba(125,107,67,.035),0 0 0 56px rgba(125,107,67,.025)}
+    .hero{background:#f2f0d5;padding:28px 18px 42px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+    .hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(135,117,72,.18);border-radius:50%;left:-100px;top:-120px;box-shadow:0 0 0 28px rgba(125,107,67,.035),0 0 0 56px rgba(125,107,67,.025)}
     .brand{max-width:1080px;margin:auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.2fr;gap:34px;align-items:center}
     .brand-copy{padding:22px 0;text-align:right}
     .eyebrow{color:var(--brown);font-size:.75rem;letter-spacing:3px;margin-bottom:12px;font-weight:700}
@@ -24,14 +24,7 @@
     .rule{width:92px;height:2px;background:var(--gold);margin:18px 0}
     .intro{font-family:Amiri,serif;line-height:2;font-size:1.1rem;max-width:560px;color:#5f674f}
     .intro-en{font-size:.74rem;line-height:1.7;color:#818876;max-width:560px;margin-top:10px}
-    .logo-mark{width:210px;height:245px;margin:auto;position:relative;display:grid;place-items:center}
-    .arch{width:140px;height:166px;border:14px solid var(--olive);border-bottom:0;border-radius:84px 84px 0 0;position:relative}
-    .arch:before{content:"";position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) rotate(45deg);width:30px;height:30px;background:var(--brown)}
-    .arch:after{content:"";position:absolute;inset:11px 21px 0;border-left:1px solid rgba(255,255,255,.55);border-right:1px solid rgba(255,255,255,.55);border-radius:45px 45px 0 0}
-    .arch .segment{position:absolute;inset:18px 0 0;border-top:1px solid rgba(255,255,255,.65);transform-origin:50% 100%}
-    .segment.s1{transform:rotate(-36deg)}.segment.s2{transform:rotate(-18deg)}.segment.s3{transform:rotate(18deg)}.segment.s4{transform:rotate(36deg)}
-    .mark-name{position:absolute;bottom:0;text-align:center;font-family:Amiri,serif;font-size:1.45rem;line-height:1.1;color:var(--ink)}
-    .mark-name span{display:block;font-family:Reem Kufi,sans-serif;font-size:.68rem;letter-spacing:1.5px;color:var(--brown);direction:ltr}
+    .logo-mark{width:250px;height:300px;margin:auto;display:flex;align-items:center;justify-content:center}.logo-mark img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;mix-blend-mode:multiply}
     .nav{position:sticky;top:0;z-index:20;background:rgba(251,250,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(62,73,59,.05)}
     .nav-inner{max-width:1080px;margin:auto;padding:10px 16px;display:flex;gap:8px;align-items:center}
     .nav-brand{font-family:Amiri,serif;font-size:1.35rem;white-space:nowrap;color:var(--ink);margin-left:auto}
@@ -43,7 +36,7 @@
     footer{max-width:1080px;margin:55px auto 0;padding:35px 16px;color:#7d856f;border-top:1px solid var(--line);text-align:center}.footer-mark{font-family:Amiri,serif;font-size:1.8rem;color:var(--ink)}footer p{font-family:Amiri,serif;font-size:1rem;margin:6px auto;max-width:600px;line-height:1.9}footer small{display:block;color:#a2a894;margin-top:14px;direction:ltr}
     .cart{position:fixed;bottom:16px;left:16px;right:16px;max-width:620px;margin:auto;background:var(--ink);color:var(--cream);border-radius:17px;padding:12px 16px;display:flex;align-items:center;gap:14px;z-index:30;box-shadow:0 18px 45px rgba(62,73,59,.25);transform:translateY(150%);transition:transform .28s}.cart.show{transform:translateY(0)}.cart-bubble{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:800}.cart-info{flex:1}.cart-info strong{display:block;color:var(--gold);font-size:.78rem}.cart-info span{font-family:Amiri,serif;font-size:1.2rem}.cart button{border:1px solid rgba(245,243,230,.35);background:transparent;color:var(--cream);border-radius:999px;padding:8px 14px;cursor:pointer}
     .search{display:none;max-width:1080px;margin:auto;padding:0 16px 12px}.search.open{display:block}.search input{width:100%;border:1px solid var(--line);border-radius:999px;background:#fff;padding:11px 18px;outline:none;color:var(--ink)}
-    @media(max-width:760px){.brand{grid-template-columns:1fr;text-align:center;gap:5px}.brand-copy{text-align:center;padding:8px 0 0}.rule{margin:15px auto}.intro{font-size:1rem}.intro-en{display:none}.logo-mark{width:155px;height:190px;transform:scale(.82);transform-origin:center top;margin-bottom:-32px}.nav-brand{font-size:1.2rem}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.card{padding:14px;min-height:182px}.card h3{font-size:1.25rem}.desc{font-size:.72rem}.price{font-size:1.1rem}.feature{grid-template-columns:1fr;padding:22px}.feature h2{font-size:2.35rem}.sizes{justify-content:center}.section-head h2{font-size:2rem}.section-head span{font-size:.58rem}}
+    @media(max-width:760px){.brand{grid-template-columns:1fr;text-align:center;gap:5px}.brand-copy{text-align:center;padding:8px 0 0}.rule{margin:15px auto}.intro{font-size:1rem}.intro-en{display:none}.logo-mark{width:190px;height:225px;transform:none;transform-origin:center top;margin-bottom:-20px}.logo-mark img{max-height:225px}.nav-brand{font-size:1.2rem}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.card{padding:14px;min-height:182px}.card h3{font-size:1.25rem}.desc{font-size:.72rem}.price{font-size:1.1rem}.feature{grid-template-columns:1fr;padding:22px}.feature h2{font-size:2.35rem}.sizes{justify-content:center}.section-head h2{font-size:2rem}.section-head span{font-size:.58rem}}
     @media(max-width:420px){.grid{grid-template-columns:1fr}.card{min-height:150px}.top-bar{} }
   </style>
 </head>
@@ -56,7 +49,7 @@
         <p class="intro">مطعم يجمع بين النكهة الشرقية الأصيلة واللمسة العصرية في تقديم الأطباق المميزة. نعتز بالمكونات الطازجة، والتوابل العطرية، والتقديم الأنيق الذي يمنحكم تجربة دافئة ومختلفة.</p>
         <p class="intro-en">A restaurant that blends authentic Eastern flavors with a modern dining experience. Known for aromatic rice, tender meat, and a warm, distinctive taste.</p>
       </div>
-      <div class="logo-mark" aria-label="شعار سر الزلال"><div class="arch"><i class="segment s1"></i><i class="segment s2"></i><i class="segment s3"></i><i class="segment s4"></i></div><div class="mark-name">سر الزلال<span>siru alzlal</span></div></div>
+      <div class="logo-mark" aria-label="شعار سر الزلال"><img src="siru-alzlal-logo.png" alt="شعار سر الزلال Siru Alzlal"></div>
     </div>
   </header>
   <nav class="nav"><div class="nav-inner"><div class="nav-brand">سر الزلال</div><div class="nav-actions"><button class="icon" id="searchBtn" aria-label="بحث">⌕</button><button class="icon" id="favBtn" aria-label="المفضلة">♡</button><button class="icon" id="cartBtn" aria-label="طلبي">🛒</button></div></div><div class="search" id="searchBox"><input id="searchInput" type="search" placeholder="ابحث عن طبق أو مشروب..." /></div><div class="pills" id="pills"></div></nav>
